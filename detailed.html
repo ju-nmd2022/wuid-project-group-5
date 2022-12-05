@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <title>Booking</title>
+</head>
+<body>
+    <div class="wrapperDetail">
+        <header>
+            <a href="index.html">
+            <img src="img/LOGO.svg" alt="Coldplay rainbow logo">
+            </a>
+            <nav>
+                <ol class="navLinks">
+                    <li>
+                        <a href="index.html">
+                            <h2>Home</h2>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tour.html">
+                            <h2>Tour</h2>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=".">
+                            <h2>Music</h2>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=".">
+                            <h2>Store</h2>
+                        </a>
+                    </li>
+                </ol>
+                <div class="hamNav">
+                    <div></div>
+                    <div></div>
+                    <div></div>  
+                </div>
+            </nav>
+        </header>
+    
+        <aside class="detailTopPlace">
+            <h1>Jönköping Sweden</h1>
+            
+        </aside>
+        <main class="detailedMain">
+            
+            <article class="infoPlaceAndTime">
+                <section>
+                    <div>
+                        <h4>Date</h4>
+                        <h3>11th december 2022</h3>
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <h4>Venue</h4>
+                        <h3>Husqvarna Garden</h3>
+                    </div>
+                    <a href="https://www.google.se/maps/place/Husqvarna+Garden/@57.7873798,14.2300831,17z/data=!3m1!4b1!4m5!3m4!1s0x465a6d10690ca1f5:0xde8e005a59db24dc!8m2!3d57.787377!4d14.2322771?hl=sv">
+                    <img src="img/pinIcon1.svg" alt="pin icon" ></a>
+                </section>
+            </article>
+
+            <article class="detailBookingInput" >
+                <h2 id="bokingTitle">Booking</h2>
+                <form class="bookingForm" action="">
+                        <fieldset class="fInFirstName">
+                            <h4>First Name</h4>
+                            <input type="text" id="inFirstName">
+                        </fieldset>
+
+                        <fieldset class="fInLastName">
+                            <h4>Last Name</h4>
+                            <input type="text" id="inLastName">
+                        </fieldset>
+
+                        <fieldset class="fInNumber">
+                            <h4>Mobile Number</h4>
+                            <input type="text" id="inNumber">
+                        </fieldset>
+
+                        <fieldset class="fInEmail">
+                            <h4>E-mail</h4>
+                            <input type="text" id="inEmail">
+                        </fieldset>
+                        <span class="errorMsg"></span>
+                    
+                    
+                        <fieldset class="fInNumTic">
+                            <h4>Number of tickets</h4>
+                            <select name="" id="inNumTic">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>       
+                            </select>
+                        </fieldset>
+                        <fieldset class="fTicketType">
+                            <h4>Choose ticket class</h4>
+                            <div class="ticketType"> 
+                                <button type="button" value="Handicap" id="handicap">Handicap </button>
+                                <button type="button" value="VIP" id="vip">VIP</button>
+                                <button type="button" value="Floor" id="floor">Floor</button>
+                                <button type="button" value="Seated" id="seated">Seated</button> 
+                            </div>
+                        </fieldset>
+                    
+                </form>
+
+                <button id="check"><h2>Checkout</h2></button>
+            </article>
+        </main>
+
+
+        <footer>
+            <div class="containerNews">
+                <article class="footerNews">
+                    <h4>Newsletter</h4>
+                    <p class="tinyText">
+                        The Newsletter will keep you informed about releases, tour dates, and special ticket pre-sales.
+                    </p>
+                    <form action="">
+                        <input type="text" placeholder="Subscribe" >
+                        </input>
+                    </form>
+                </article> 
+            </div>
+            
+            
+            <aside class="socialLinks">
+                <h4>Follow us</h4>
+                <ul>
+                    <li> <a href="https://open.spotify.com/artist/4gzpq5DPGxSnKTe4SA8HAU"><img src="img/Spotify.svg" alt=""></a> </li>
+                    <li> <a href="https://music.apple.com/us/artist/coldplay/471744"><img src="img/Apple.svg" alt=""></a> </li>
+                    <li> <a href="https://www.youtube.com/channel/UCDPM_n1atn2ijUwHd0NNRQw"><img src="img/Youtube.svg" alt=""></a> </li>
+                    <li> <a href="https://twitter.com/coldplay"><img src="img/Twitter.svg" alt=""></a> </li>
+                    <li> <a href="https://www.facebook.com/coldplay/"><img src="img/Facebook.svg" alt=""></a> </li>
+                    <li> <a href="https://www.instagram.com/coldplay/"><img src="img/Instagram.svg" alt=""></a> </li>
+                </ul>
+                <p class="tinyText">
+                    Privacy policy / Terms and conditions / Contact / Cookies</p>
+            </aside>
+            <script src="main.js" defer></script>
+        </footer>
+
+    </div>
+</body>
+</html>

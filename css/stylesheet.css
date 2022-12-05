@@ -1,0 +1,1048 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville&family=Open+Sans:wght@300&display=swap');
+:root{
+    --coldPlayPurple: #25166F ;
+    --coldPlayPink: #FFA2F3;
+    --coldPlayWheat: #FDEBC9;
+    --black: #000000;
+    
+    --coldPlayGrad1: #592AA5;
+    --coldPlayGrad2: #000747; 
+    --coldPlayGrad: linear-gradient(to right, var(--coldPlayGrad2), var(--coldPlayGrad1));
+    --headerHeight: 10vh;
+    --ticketWidth: 5rem;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+h1, h2, h3, h4, p, .tinyText, section, button, div, span, label{
+    font-family: 'Baskervville', serif;
+}
+
+h1 {
+    font-size: 1.9rem;
+}
+
+h2 {
+    font-size: 1.7rem; 
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+.tinyText {
+    font-size: 0.9rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+ /* To make new images on website to to big and hard to see, only temporary */
+img{
+    width: 20vw;
+    height: auto;
+}
+
+/* ------------------------------------------------- */
+/*                      Home                         */
+/* ------------------------------------------------- */
+
+
+.wrapperHome{
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--headerHeight) calc(100vh - var(--headerHeight) ) auto auto;
+    grid-template-areas: 
+    "he"
+    "ma"
+    "as"
+    "fo"
+    ;
+    overflow: hidden;
+}
+
+header {
+    grid-area: he;
+    height: var(--headerHeight);
+    background-color: var(--coldPlayPurple);
+    display: flex; 
+    justify-content: space-between;
+}
+
+header img{
+    height: 100%;
+    padding-left: 2vw;
+    grid-area: lo;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 5vw;
+}
+
+.navLinks{
+    display: flex;
+    gap: 3vw;
+}
+
+.navLinks li a h2{
+    color: var(--coldPlayWheat);
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+}
+.hamNav{
+    display: none;
+    grid-area: ha;
+}
+
+.hamNav div{
+    background-color: var(--coldPlayWheat);
+}
+main {
+    grid-area: ma;
+    background-image: url("../img/misc/stageImage.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main article{
+    display: grid;
+    height: 100%;
+    grid-template-rows: 1fr;
+    grid-template-columns: 15fr 10fr;
+    grid-template-areas: 
+    "wt gp"
+    ;
+}
+
+.worldTour{
+    grid-area: wt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.worldTour a{
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "forceButton";
+}
+
+.button{
+    grid-area: forceButton;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button img{
+    width: 30rem;
+}
+
+.buttonText {
+    grid-area: forceButton;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    color: var(--coldPlayWheat);
+    text-transform: uppercase;
+    z-index: 2;
+}
+.buttonText:hover{
+    color: var(--coldPlayPink);
+
+}
+
+main article aside{
+    grid-area: gp;
+    display: flex;
+    align-items: flex-end;
+    overflow-x: hidden;
+}
+
+main #groupPic{
+    width: 90%;
+    height: auto;
+}
+
+.coldPlayStory {
+    grid-area: as;
+    background-image: linear-gradient(to right, var(--coldPlayGrad2), var(--coldPlayGrad1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4vh;
+}
+
+.coldPlayStory article{
+    max-width: 70vw;
+    width: 50rem;
+}
+
+.coldPlayStory article h3{
+    text-transform: uppercase;
+}
+
+.coldPlayStory h3, .coldPlayStory p{
+    color: var(--coldPlayWheat);
+    padding: 0.8rem;
+}
+
+footer {
+    grid-area: fo;
+    height: 20vh;
+    display: flex;
+    background-color: var(--coldPlayPurple);
+    color: var(--coldPlayWheat);
+    justify-content: space-between;
+    gap: 7vw;
+}
+
+.footerNews, .socialLinks{
+    padding: 0px 1vw;
+}
+
+.containerNews{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+}
+
+.footerNews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.footerNews h4{
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+footer input{
+    width: 12rem;
+    height: 1.4rem;
+    border: 2px solid var(--coldPlayPink);
+    border-radius: 4px;
+    /* box-shadow: 5px 10px var(--coldPlayGrad2); */
+    background-color: transparent;
+    color: var(--coldPlayWheat);
+}
+
+::placeholder {
+    font-size: 0.9rem;
+    font-family: 'Baskervville', serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--coldPlayPink);
+}
+
+.socialLinks{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0vh 5vw;
+    gap: 1vw;
+    flex-direction: column;
+    padding: 5vh 5vw;
+}
+.socialLinks h4{
+    display: none;
+}
+.socialLinks ul{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0.8rem;
+}
+
+.socialLinks img{
+    width: 1.2rem;
+}
+
+/* ------------------------------------------------------------- */
+/*                           Tour page                           */
+/* ------------------------------------------------------------- */
+
+
+.mainTour{
+    background-image: linear-gradient(to right, var(--coldPlayGrad2), var(--coldPlayGrad1));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+.tourDatesList{
+    background-color: var(--coldPlayWheat);
+    width: 70vw;
+    margin: 5vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 60em;
+}
+.tourDatesList li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tourDatesList li article{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    border-bottom: var(--black) solid 0.1em;
+    margin: 1em;
+    height: 90%;
+    width: 90%;
+}
+
+.tourDatesList li article section{
+    padding-bottom: 1em;
+}
+
+.tourDateAndTicket{
+    display: grid;
+    grid-template-columns: auto 15em;
+    text-align: center;
+}
+
+#getTicket:hover {
+text-decoration: underline
+}
+
+.tourPlace h4{
+    color: var(--coldPlayPurple);
+}
+
+.tourDateAndTicket a{
+    color: var(--black);
+}
+
+/* ------------------------------------------------------------- */
+/*                           Detail page                         */
+/* ------------------------------------------------------------- */
+
+.wrapperDetail{
+    width: 100%;
+}
+
+.detailTopPlace {
+    background-image: url(../img/arenan1.png);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: 100vw;
+    height: 30vh;
+    background-color: rgba(37, 22, 111, 0.7);
+    background-blend-mode: multiply;
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.detailTopPlace h1 {
+    color: var(--coldPlayWheat);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.detailedMain{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, var(--coldPlayGrad2), var(--coldPlayGrad1)) ;
+}
+
+.infoPlaceAndTime{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding-top: 2em;
+    gap: 3em;
+}
+
+.infoPlaceAndTime section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--coldPlayPink);
+
+} 
+
+.infoPlaceAndTime h3 {
+    color: var(--coldPlayWheat);
+    font-size: 2em;
+    font-weight: 300;
+}
+
+.infoPlaceAndTime h4{
+    color: var(--coldPlayPink);
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.infoPlaceAndTime a {
+    width: 2.5em;
+    height: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infoPlaceAndTime img {
+    height: 80%;
+    width: auto;
+}
+
+.detailBookingInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.detailBookingInput h2 {
+    color: var(--coldPlayWheat);
+}
+
+.detailBookingInput a h2 {
+    color: var(--coldPlayPink);
+}
+
+.bookingForm{
+    background-color: var(--coldPlayWheat);
+    width: 60%;
+    max-width: 40em;
+    padding: 1em;
+}
+
+fieldset {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: none;
+}
+
+.bookingForm input{
+    padding-left: 1em;
+}
+
+#inNumTic{
+    width: 3em;
+    height: 3em;
+    border-radius: 0.3em;
+    border: 0.14em solid var(--black);
+}
+
+
+.bookingForm{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "na ln"
+    "mo em"
+    "nu . "
+    "ch ch";
+}
+
+.bookingForm fieldset{
+    display: flex;
+    justify-content: center;
+    margin: 0.5em;
+}
+
+.bookingForm fieldset input{
+    max-width: 20em;
+    height: 2.5em;
+    border-radius: 0.3em;
+}
+
+.fInFirstName{
+    grid-area: na;
+    
+}
+
+.fInLastName{
+    grid-area: ln;
+}
+
+.fInNumber{
+    grid-area: mo;
+
+}
+
+.fInEmail{
+    grid-area: em;
+}
+
+.fInNumTic{
+    grid-area: nu;
+}
+
+.fTicketType{
+    grid-area: ch;
+}
+
+.ticketType{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.5em;
+}
+
+.ticketType button{
+    font-family: 'Baskervville', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    padding: 1em;
+    background-color: var(--coldPlayPurple);
+    color: var(--coldPlayPink);
+    border: 0.2em solid var(--coldPlayPink);
+    border-radius: 0.5em;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.ticketType button:hover{
+    cursor: pointer;
+}
+
+
+#handicap:focus, #vip:focus, #floor:focus, #seated:focus{
+    background-color: var(--coldPlayPink);
+    color: var(--coldPlayPurple);
+    border: 0.2em solid var(--coldPlayPurple);
+}
+
+.detailBookingInput h2{
+    margin: 2em;
+    text-transform: uppercase;
+}
+
+#bokingTitle{
+    margin-bottom: 1em;
+}
+
+#check{
+    max-width: 80%;
+    min-width: 25em;
+    height: 5em;
+    margin: 2em;
+    text-align: center;
+    background-color: transparent;
+    border: 0.2em solid var(--coldPlayPink);
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+#check h2{
+    color: var(--coldPlayPink);
+    background-color: transparent;
+    margin: 0px;
+}
+
+.errorMsg{
+    color: red;
+}
+
+/* ------------------------------------------------------------- */
+/*                            Payment Page                       */
+/* ------------------------------------------------------------- */
+
+.content{
+    padding: 0 15px;
+    margin: auto;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.arrow{
+    padding: 1rem;
+    justify-content: flex-start;
+}
+
+.arrow img{
+    margin-top: 0.5rem;
+    width: 3rem;
+}
+
+.choosenTicket .content{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border: 1px solid black;
+}
+
+.choosenTicket .content section{
+    border: 1px solid black;
+    margin: 1rem;
+    width: calc( var(--ticketWidth)*1.5 );
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#ticketSpin{
+    animation-name: tic;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    width: var(--ticketWidth);
+    animation-timing-function: linear;
+}
+
+@keyframes tic {
+    100% {
+        transform: rotate3d(0,1,0.25, 360deg);
+  
+    }
+}
+
+.choosenTicket .content .pay-details{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.choosenTicket .content .pay-tickets {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.choosenTicket .content .pay-tickets img{
+    width: 1.5rem;
+
+}
+
+.choosenTicket .content .pay-details span{
+    display: block;
+    font-size: 1.5rem;
+}
+
+.persInfo{
+    margin-top: 1rem;
+}
+
+.persInfo .content{
+    padding: 1rem;
+    border: 0.1rem solid black;
+}
+
+.persInfo .content .info{
+    display: flex;
+    gap: 2rem;
+    padding: 0.7rem;
+}
+
+.persInfo .content .info img{
+    width: 1rem;
+}
+
+.paymentOpt{
+    margin-top: 1rem;
+}
+
+.paymentOpt .content{
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+.paymentOpt .content h2{
+    text-transform: uppercase;
+}
+
+.paymentOpt h2{
+    width: 15rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: var(--coldPlayPink);
+    border: 1px solid black;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.paymentOpt .content .pay-choose{
+    width: 30rem;
+    max-width: 100%;
+    margin: 1rem auto 0;
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+.paymentOpt .content .pay-choose{
+    width: 90%;
+}
+
+.paymentOpt .btn{
+    margin-top: 1rem;
+    text-align: center;  
+    padding-bottom: 2rem;
+}
+
+.paymentOpt button{
+    color: #000000;
+    text-transform: uppercase;
+    width: 18rem;
+    height: 3rem;
+    font-size: 1.3rem;
+    background-color: var(--coldPlayPink);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.paymentOpt button:hover {
+    cursor: pointer;
+}
+
+.paymentOpt button{
+    width: 15rem;
+    height: calc(auto + 0.2em);
+}
+
+/* ------------------------------------------------------------- */
+/*                        Confirmation Page                      */
+/* ------------------------------------------------------------- */
+
+.box{
+    margin-top: 4rem;
+}
+
+.box .content{
+    border: 0.1rem solid black;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.box .content img{
+    width: 5rem;
+}
+
+.box .content h2{
+    padding: 1.5rem 0;
+
+}
+
+.box .content span{
+    display: block;
+    font-size: 1.1rem;
+}
+
+
+
+/* ------------------------------------------------------------- */
+/*                           Mobile Version                      */
+/* ------------------------------------------------------------- */
+
+/* https://www.w3schools.com/bootstrap/bootstrap_grid_system.asp 
+screen sizes*/
+
+
+@media screen and (max-width: 768px){
+
+    .actHamNav{
+        position: fixed;
+        width: 10vh !important;
+        height: 10vh !important;
+        z-index: 3;
+    }
+    
+    .actHamNav #hamLine1  {
+        transform: rotate(45deg);
+        transform-origin: 5%;
+        transition: 0.5s;
+    }
+
+    .actHamNav #hamLine2{
+        margin-left: 35vw ;
+        opacity: 0%;
+        transition: 0.8s;
+    }
+
+    .actHamNav #hamLine3{
+        transform: rotate(-45deg);
+        transform-origin: 5%;
+        transition: 1.5s;
+    }
+
+    .actNavLinks{
+        position: fixed !important;
+        top: 0px !important;
+        transition: 1s;
+        
+    }
+
+    .actNavLinks li a h2{
+        font-family:'Baskervville', serif;
+        font-size: 2rem;
+    }
+
+    .actContainerNews{
+        opacity: 100% !important;
+        transition: 1s;
+        transition-delay: 0.7s;
+
+    }
+
+    header{
+        height: var(--headerHeight);
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+        'lo ha'
+        ;
+    }
+    
+    header a{
+        grid-area: lo;
+        width: 85%;
+        justify-self: center;
+        align-self: center;
+    }
+
+    header a img{
+        width: 100%;
+        height: auto;
+    }
+    
+    .navLinks{
+        position: absolute;
+        top: -120vh;
+        left: 0px;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        background-image: linear-gradient( var(--coldPlayGrad1), var(--coldPlayGrad2));
+        gap: 4rem;
+        height: 100vh;
+        width: 100vw;
+        padding-top: 15vh;
+        z-index: 3;
+    }
+    
+    .hamNav{
+        grid-area: ha;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10%;
+    }
+    
+    .hamNav div{
+        width: 50%;
+        height: 0.3em;
+    }
+
+    main article{
+        display: grid;
+        height: 100%;
+        grid-template-rows: 1fr auto;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'wt' 
+        'gp'
+        ;
+    }
+
+    .worldTour{
+        width: 100vw; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .worldTour a{
+        width: 90%;
+    }
+
+    .buttonText h4{
+        display: none;
+    }
+
+    aside {
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #groupPic{
+        height: 100% !important;
+    }
+
+    .coldPlayStory{
+        padding: 4vh 0vh;
+    }
+
+    .coldPlayStory article{
+        max-width: 90%;
+    }
+
+    footer{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+    }
+
+    .containerNews{
+        opacity: 0%;
+        position: fixed;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        bottom: 12vh;
+        z-index: 5;
+    }
+
+    .socialLinks h4{
+        display: inline-block;
+        text-transform: uppercase;
+        margin-bottom: 2vh;
+    }
+
+    .socialLinks{
+        align-items: center;
+        padding: 5vh 0vh;
+
+    }
+    .socialLinks ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .socialLinks ul li{
+        width: 30%;
+        height: auto;
+        margin: 0.8rem 0rem;
+    }
+
+    .socialLinks ul li a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+        height: 100%;
+    }
+
+    .socialLinks ul li img{
+        width: 50%;
+        height: auto;
+    }
+
+    .socialLinks .tinyText{
+        margin-top: 2vh;
+    }
+
+    .mainTour aside{
+        display: none;
+    }
+
+    .tourDatesList{
+        width: 100%;
+        margin: 5vh 0vh;
+    }
+
+    .tourDateAndTicket{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tourDatesList li article{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    #getTicket{
+        box-shadow: inset var(--coldPlayPurple) 0 -0.1em 0.3em;
+        border-radius: 0.3em;
+    }
+
+    .wrapperDetail{
+        max-width: 100vw;
+    }
+
+    .detailTopPlace{
+        width: auto;
+        background-size: cover;
+    }
+
+    .bookingForm{
+        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1em 0em;
+    }
+
+    fieldset{
+        width: 80%;
+    }
+
+    .fTicketType{
+        width: 100vw;
+        padding-top: 1em;
+    }
+
+    .fTicketType h4{
+    align-self: center;    
+    }
+
+    .ticketType{
+        display: flex;
+        justify-content: space-around;
+    }
+}
