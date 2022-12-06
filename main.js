@@ -11,6 +11,9 @@ function dropDownHam(){
 }
 
 /* ------------------------------------------------------------- */
+                        // Payment handling
+/* ------------------------------------------------------------- */
+
 
 let firstName = document.querySelector("#inFirstName")
 let lastName = document.querySelector("#inLastName")
@@ -19,18 +22,15 @@ let email = document.querySelector("#inEmail")
 let ticketsNumber = document.querySelector("#inNumTic")
 let errorMsg = document.querySelector(".errorMsg")
 let checkBtn = document.querySelector("#check")
-
 let handicapSelected = document.querySelector("#handicap")
 let vipSelected = document.querySelector("#vip")
 let floorSelected = document.querySelector("#floor")
 let seatedSelected = document.querySelector("#seated")
-
 let ticket = ""
 
 document.querySelectorAll('.ticketType button').forEach(item => {
     item.addEventListener('click', ticketType => {
-    ticket = item.value
-    console.log(item.value)
+        ticket = item.value
     })
  })
 
@@ -56,4 +56,11 @@ function checkInput(){
     }
 }
 
-checkBtn.addEventListener("click",checkInput)
+if(document.querySelector('head title').innerHTML === 'Booking'){
+    checkoutPage();
+}
+
+
+function checkoutPage(){
+    checkBtn.addEventListener("click",checkInput)
+}

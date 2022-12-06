@@ -4,12 +4,18 @@
     --coldPlayPink: #FFA2F3;
     --coldPlayWheat: #FDEBC9;
     --black: #000000;
+    --errorRed: #ff0000;
+
+    --transparentPurple: rgba(37, 22, 111, 0.7);
     
     --coldPlayGrad1: #592AA5;
     --coldPlayGrad2: #000747; 
     --coldPlayGrad: linear-gradient(to right, var(--coldPlayGrad2), var(--coldPlayGrad1));
     --headerHeight: 10vh;
     --ticketWidth: 5rem;
+    --borderThickness: 0.1rem;
+    --borderRoundness: 0.3em;
+    --borderColor: #000000;
 }
 
 *{
@@ -50,11 +56,8 @@ a{
     text-decoration: none;
 }
 
- /* To make new images on website to to big and hard to see, only temporary */
-img{
-    width: 20vw;
-    height: auto;
-}
+
+
 
 /* ------------------------------------------------- */
 /*                      Home                         */
@@ -87,6 +90,7 @@ header img{
     height: 100%;
     padding-left: 2vw;
     grid-area: lo;
+    width: 20vw;
 }
 
 nav{
@@ -106,6 +110,11 @@ nav{
     text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
 }
+
+.siteNotMade:hover{
+    cursor: not-allowed;
+}
+
 .hamNav{
     display: none;
     grid-area: ha;
@@ -114,6 +123,7 @@ nav{
 .hamNav div{
     background-color: var(--coldPlayWheat);
 }
+
 main {
     grid-area: ma;
     background-image: url("../img/misc/stageImage.jpg");
@@ -150,7 +160,7 @@ main article{
 
 .button{
     grid-area: forceButton;
-    z-index: 1;
+    z-index: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -169,18 +179,16 @@ main article{
     
     color: var(--coldPlayWheat);
     text-transform: uppercase;
-    z-index: 2;
+    z-index: 1;
 }
 .buttonText:hover{
     color: var(--coldPlayPink);
-
 }
 
 main article aside{
     grid-area: gp;
     display: flex;
     align-items: flex-end;
-    overflow-x: hidden;
 }
 
 main #groupPic{
@@ -252,14 +260,13 @@ footer input{
     height: 1.4rem;
     border: 2px solid var(--coldPlayPink);
     border-radius: 4px;
-    /* box-shadow: 5px 10px var(--coldPlayGrad2); */
     background-color: transparent;
     color: var(--coldPlayWheat);
 }
 
 ::placeholder {
     font-size: 0.9rem;
-    font-family: 'Baskervville', serif;
+    font-family: 'Baskerville', serif;
     text-transform: uppercase;
     text-align: center;
     color: var(--coldPlayPink);
@@ -274,9 +281,11 @@ footer input{
     flex-direction: column;
     padding: 5vh 5vw;
 }
+
 .socialLinks h4{
     display: none;
 }
+
 .socialLinks ul{
     display: flex;
     justify-content: center;
@@ -300,6 +309,7 @@ footer input{
     align-items: center;
     min-height: 70vh;
 }
+
 .tourDatesList{
     background-color: var(--coldPlayWheat);
     width: 70vw;
@@ -308,6 +318,7 @@ footer input{
     flex-direction: column;
     max-width: 60em;
 }
+
 .tourDatesList li{
     display: flex;
     align-items: center;
@@ -361,9 +372,8 @@ text-decoration: underline
     background-position: center;
     background-size: 100vw;
     height: 30vh;
-    background-color: rgba(37, 22, 111, 0.7);
+    background-color: var(--transparentPurple);
     background-blend-mode: multiply;
-
     display: grid;
     align-items: center;
     justify-content: center;
@@ -376,7 +386,7 @@ text-decoration: underline
 }
 
 .detailedMain{
-    width: 100vw;
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -486,6 +496,7 @@ fieldset {
 }
 
 .bookingForm fieldset input{
+    width: 90%;
     max-width: 20em;
     height: 2.5em;
     border-radius: 0.3em;
@@ -493,7 +504,6 @@ fieldset {
 
 .fInFirstName{
     grid-area: na;
-    
 }
 
 .fInLastName{
@@ -502,7 +512,6 @@ fieldset {
 
 .fInNumber{
     grid-area: mo;
-
 }
 
 .fInEmail{
@@ -534,6 +543,7 @@ fieldset {
     background-color: var(--coldPlayPurple);
     color: var(--coldPlayPink);
     border: 0.2em solid var(--coldPlayPink);
+    box-shadow: 0.3em 0.4em 0em var(--transparentPurple);
     border-radius: 0.5em;
     font-size: 0.9em;
     text-transform: uppercase;
@@ -578,7 +588,11 @@ fieldset {
 }
 
 .errorMsg{
-    color: red;
+    color: var(--errorRed);
+    padding-left: 0.8rem;
+    font-weight: 800;
+    font-size: 1.3rem;
+   
 }
 
 /* ------------------------------------------------------------- */
@@ -586,10 +600,10 @@ fieldset {
 /* ------------------------------------------------------------- */
 
 .content{
-    padding: 0 15px;
+    padding: 0 1em;
     margin: auto;
     width: 80%;
-    max-width: 1000px;
+    max-width: 50em;
 }
 
 .arrow{
@@ -606,11 +620,11 @@ fieldset {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    border: 1px solid black;
+    border: var(--borderThickness) solid var(--borderColor);
 }
 
 .choosenTicket .content section{
-    border: 1px solid black;
+    border: var(--borderThickness) solid var(--borderColor);
     margin: 1rem;
     width: calc( var(--ticketWidth)*1.5 );
     padding: 3rem;
@@ -630,7 +644,7 @@ fieldset {
 @keyframes tic {
     100% {
         transform: rotate3d(0,1,0.25, 360deg);
-  
+
     }
 }
 
@@ -662,7 +676,7 @@ fieldset {
 
 .persInfo .content{
     padding: 1rem;
-    border: 0.1rem solid black;
+    border: var(--borderThickness) solid var(--borderColor);
 }
 
 .persInfo .content .info{
@@ -680,40 +694,30 @@ fieldset {
 }
 
 .paymentOpt .content{
-    padding: 1rem;
-    border: 1px solid black;
-}
-
-.paymentOpt .content h2{
-    text-transform: uppercase;
-}
-
-.paymentOpt h2{
-    width: 15rem;
-    height: 3rem;
+    height: auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin: auto;
-    background-color: var(--coldPlayPink);
-    border: 1px solid black;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+    justify-content: space-around;
+    border: var(--borderThickness) solid var(--borderColor)
+
+}
+
+#klaraLogo{
+    width: 40%;
+    max-width: 10rem;
+    margin-top: 2rem;
 }
 
 .paymentOpt .content .pay-choose{
-    width: 30rem;
     max-width: 100%;
-    margin: 1rem auto 0;
-    border: 1px solid black;
+    margin: 2rem 0rem;
+    border: var(--borderThickness) solid var(--borderColor);
     padding: 1rem;
 }
 
-.paymentOpt .content .pay-choose{
-    width: 90%;
+.paymentOpt .content form{
+    width: 80%;
 }
 
 .paymentOpt .btn{
@@ -723,17 +727,14 @@ fieldset {
 }
 
 .paymentOpt button{
-    color: #000000;
+    color: var(--black);
     text-transform: uppercase;
     width: 18rem;
     height: 3rem;
     font-size: 1.3rem;
     background-color: var(--coldPlayPink);
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+    border: var(--borderThickness) solid var(--borderColor);
+    border-radius: var(--borderRoundness);
 }
 
 .paymentOpt button:hover {
@@ -754,7 +755,7 @@ fieldset {
 }
 
 .box .content{
-    border: 0.1rem solid black;
+    border: 0.1rem solid var(--black);
     text-align: center;
     padding: 1rem 0;
 }
@@ -816,10 +817,15 @@ screen sizes*/
         transition: 1s;
         
     }
+    
 
     .actNavLinks li a h2{
-        font-family:'Baskervville', serif;
         font-size: 2rem;
+    }
+
+    .footerNews{
+        max-width: 90vw !important;
+        
     }
 
     .actContainerNews{
@@ -829,9 +835,10 @@ screen sizes*/
 
     }
 
+
     header{
         height: var(--headerHeight);
-        width: 100vw;
+        width: 100%;
         display: grid;
         grid-template-columns: 3fr 1fr;
         grid-template-rows: 1fr;
@@ -886,6 +893,7 @@ screen sizes*/
     main article{
         display: grid;
         height: 100%;
+        width: 100%;
         grid-template-rows: 1fr auto;
         grid-template-columns: 1fr;
         grid-template-areas: 
@@ -895,10 +903,14 @@ screen sizes*/
     }
 
     .worldTour{
-        width: 100vw; 
+        width: 100%; 
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .worldTour img{
+        max-width: 100%;
     }
 
     .worldTour a{
@@ -942,8 +954,8 @@ screen sizes*/
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        bottom: 12vh;
-        z-index: 5;
+        bottom: 5%;
+        z-index: 3;
     }
 
     .socialLinks h4{
@@ -1019,6 +1031,10 @@ screen sizes*/
         background-size: cover;
     }
 
+    .detailedMain{
+        width: 100%;
+    }
+    
     .bookingForm{
         min-width: 100%;
         display: flex;
@@ -1026,6 +1042,10 @@ screen sizes*/
         justify-content: center;
         align-items: center;
         padding: 1em 0em;
+    }
+
+    .errorMsg{
+        max-width: 85%;
     }
 
     fieldset{
@@ -1038,11 +1058,21 @@ screen sizes*/
     }
 
     .fTicketType h4{
-    align-self: center;    
+        align-self: center;    
     }
 
     .ticketType{
         display: flex;
         justify-content: space-around;
+    }
+
+    .choosenTicket .content{
+        flex-direction: column;
+        padding-bottom: 1.5rem;
+    }
+
+    .choosenTicket .content section{
+        margin: 0px;
+        margin-top: 1.5rem;
     }
 }
